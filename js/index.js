@@ -16,7 +16,7 @@ function activarClickEnCarrito() {
     if (botonesCarrito !== null) {
         for (let boton of botonesCarrito) {
             boton.addEventListener("click", (e) => {
-                agregarACarrito(e.target.id);
+                agregarAlCarrito(e.target.id);
             });
         }
     }
@@ -31,4 +31,6 @@ const cargarProductos = (array) => {
     activarClickEnCarrito();
 };
 
-cargarProductos(productos);
+document.addEventListener('DOMContentLoaded', () => {
+    cargarProductos(productos);
+});
