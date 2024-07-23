@@ -1,3 +1,5 @@
+const URL = 'js/productos.json'
+const productos =[]
 const container = document.querySelector('div.container');
 
 const retornarCardHtml = (producto) => {
@@ -34,3 +36,11 @@ const cargarProductos = (array) => {
 document.addEventListener('DOMContentLoaded', () => {
     cargarProductos(productos);
 });
+
+function obtenerProductos(){
+    fetch(URL)
+    .then((response)=>response.json())
+    .then((data)=> productos.push(...data))
+    .then(()=> cargarProductos(productos))
+    }
+    obtenerProductos()
